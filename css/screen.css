@@ -8,14 +8,30 @@
 
 :root {
     /* colors */
-    --color-alpha-light: MEDIUMSLATEBLUE;
-    --color-alpha: SLATEBLUE;
 
-    --color-neutral-light: LIGHTSLATEGRAY;
-    --color-neutral: SLATEGRAY;
-    --color-neutral-dark: DARKSLATEGRAY;
+    --color-alpha: #A3A0FB;
+
+    --color-neutral-xxx-light:#F0F0F7;
+    --color-neutral-xx-light:#EBEBF2;
+    --color-neutral-x-light: #D7DAE2;
+    --color-neutral-light: #BCBCCB;
+    --color-neutral: #A5A4BF;
+    --color-neutral-dark: #808495;
+    --color-neutral-x-dark: #4D4F5C;
+    --color-neutral-xx-dark: #43425D;
+    --color-neutral-xxx-dark:#3B3B53;
+
+    --color-white:#FFF;
+
+    /*white-space*/
+    --baseline:5px;
+    --baseline-large: calc(var(--baseline)*2);
+    --baseline-x-large: calc(var(--baseline)*3);
+    --baseline-xx-large: calc(var(--baseline)*4);
+    --baseline-xxxx-large: calc(var(--baseline)*5);
 
     /* Shadows */
+    --shadow:0 2px 6px rgba(0, 0, 0, 0.04);
 
     /* border radius */
 
@@ -34,14 +50,15 @@
 */
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: var(--color-neutral-dark);
+    font-weight: 400;
+    font-family: 'Source Sans Pro', Helvetica, arial, sans-serif;
+    color: var(--color-neutral-xx-dark);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: var(--color-neutral-xx-dark);
 }
 
 *,
@@ -289,6 +306,49 @@ input::placeholder {
 #COMPONENTS
 \*------------------------------------*/
 
+.c-app{
+  min-height: 100vh;
+
+}
+
+.c-app__logo{
+  background-color: var(--color-neutral-xxx-dark);
+  padding: var(--baseline-xx-large);
+  z-index: 104;
+}
+.c-app__topbar{
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+  z-index: 103;
+}
+
+.c-app__sidebar{
+  background-color: var(--color-neutral-xx-dark);
+  z-index: 102;
+}
+
+.c-app__main{
+  background-color: var(--color-neutral-xxx-light);
+  z-index: 101;
+}
+@media (min-width:992px) {
+  .c-app{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr;
+
+  }
+}
+
+.c-logo{
+  color: var(--color-white);
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 15px;
+  text-transform: uppercase;
+
+}
 /*
     Component: Logo
     ---
