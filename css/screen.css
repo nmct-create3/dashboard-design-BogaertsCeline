@@ -405,9 +405,61 @@ input::placeholder {
   padding: var(--baseline-xx-large);
   background-color: var(--color-white);
   box-shadow: var(--shadow);
-  grid-column: span 12;
+  grid-column: 1/-1;
 }
 
+.c-custom-select {
+
+	display: block;
+  position: relative;
+}
+
+.c-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: 1px solid var(--color-neutral-xxx-light);
+    border-radius: var(--radius);
+    background-color: #fff;
+    color: var(--color-neutral-xxxx-dark);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px 16px;
+    outline: none;
+    box-shadow: var(--inset-shadow);
+    transition: border var(--transition-alpha);
+}
+
+.c-input:hover {
+    border-color: var(--color-neutral-xx-light);
+}
+
+.c-input:focus,
+.c-input:active {
+    border-color: var(--color-alpha-x-light);
+    box-shadow: var(--focus-shadow);
+}
+
+.c-custom-select__input{
+  padding-right: 40px;
+}
+.c-custom-select__symbol {
+	  width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    pointer-events: none;
+    fill: var(--color-neutral-x-light);
+}
+
+.c-card__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /*
     Component: Logo
     ---
