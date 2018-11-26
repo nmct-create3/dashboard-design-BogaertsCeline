@@ -29,6 +29,7 @@
     --baseline-x-large: calc(var(--baseline)*3);
     --baseline-xx-large: calc(var(--baseline)*4);
     --baseline-xxxx-large: calc(var(--baseline)*5);
+    --baseline-xxxxx-large: calc(var(--baseline)*6);
 
     /* Shadows */
     --shadow:0 2px 6px rgba(0, 0, 0, 0.04);
@@ -307,7 +308,7 @@ input::placeholder {
 \*------------------------------------*/
 
 .c-app{
-  min-height: 100vh;
+  height: 100vh;
 
 }
 
@@ -329,7 +330,10 @@ input::placeholder {
 
 .c-app__main{
   background-color: var(--color-neutral-xxx-light);
+  overflow: auto;
   z-index: 101;
+  padding: var(--baseline-xxxxx-large);
+
 }
 @media (min-width:992px) {
   .c-app{
@@ -349,6 +353,61 @@ input::placeholder {
   text-transform: uppercase;
 
 }
+.c-main-nav{}
+
+.c-main-nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.c-main-nav__item{
+  color: var(--color-white);
+  text-decoration: none;
+  height: calc(var(--baseline)*11);
+  display: block;
+  padding: var(--baseline-x-large);
+  padding-left: var(--baseline-xxxx-large);
+  font-size: var(--baseline-x-large);
+  line-height:var(--baseline-xx-large);
+}
+
+.c-main-nav__item:hover{
+  color: var(--color-white);
+  border-left: 5px solid  var(--color-alpha);
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c-main-nav__symbol{
+  fill:var(--color-neutral);
+  margin-right: var(--baseline-x-large);
+}
+
+.c-main-nav__symbol:hover{
+  fill:inherit;
+}
+
+.is-selected{
+  background-color: rgba(0,0,0,0.1);
+  border-left: 5px solid  var(--color-alpha);
+}
+
+.is-selected svg{
+  fill:var(--color-alpha);
+}
+.c-dashboard{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-gap: var(--baseline-xxxxx-large);
+  grid-template-rows: repeat(5,1fr)
+}
+
+.c-dashboard__items{
+  padding: var(--baseline-xx-large);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+  grid-column: span 12;
+}
+
 /*
     Component: Logo
     ---
@@ -358,6 +417,72 @@ input::placeholder {
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
+.u-grid-column-span-1{
+  grid-column: span 1;
+}
+
+.u-grid-column-span-2{
+  grid-column: span 2;
+}
+
+.u-grid-column-span-3{
+  grid-column: span 3;
+}
+
+.u-grid-column-span-4{
+  grid-column: span 4;
+}
+
+.u-grid-column-span-5{
+  grid-column: span 5;
+}
+
+.u-grid-column-span-6{
+  grid-column: span 6;
+}
+
+.u-grid-column-span-7{
+  grid-column: span 7;
+}
+
+.u-grid-column-span-8{
+  grid-column: span 8;
+}
+
+.u-grid-column-span-9{
+  grid-column: span 9;
+}
+
+.u-grid-column-span-10{
+  grid-column: span 10;
+}
+
+.u-grid-column-span-11{
+  grid-column: span 11;
+}
+
+.u-grid-column-span-12{
+  grid-column: span 12;
+}
+
+
+.u-grid-row-span-1{
+  grid-row: span 1;
+}
+
+.u-grid-row-span-2{
+  grid-row: span 2;
+}
+.u-grid-row-span-3{
+  grid-row: span 3;
+}
+.u-grid-row-span-4{
+  grid-row: span 4;
+}
+.u-grid-row-span-5{
+  grid-row: span 5;
+}
+
 
 /*
     Utilities: color
