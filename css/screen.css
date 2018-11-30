@@ -426,7 +426,7 @@ input::placeholder {
     font-family: inherit;
     font-size: 16px;
     line-height: 24px;
-    padding: 11px 16px;
+    padding: var(--baseline-large);
     outline: none;
     box-shadow: var(--inset-shadow);
     transition: border var(--transition-alpha);
@@ -438,19 +438,21 @@ input::placeholder {
 
 .c-input:focus,
 .c-input:active {
-    border-color: var(--color-alpha-x-light);
+    border-color: var(--color-alpha);
     box-shadow: var(--focus-shadow);
 }
 
 .c-custom-select__input{
+  box-shadow: var(--shadow);
   padding-right: 40px;
+  border-radius: var(--baseline);
 }
 .c-custom-select__symbol {
 	  width: 24px;
     height: 24px;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: var(--baseline-large);
+    right: var(--baseline);
     pointer-events: none;
     fill: var(--color-neutral-x-light);
 }
@@ -465,7 +467,10 @@ input::placeholder {
     ---
     Website main logo
 */
-
+.c-container{
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+}
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
